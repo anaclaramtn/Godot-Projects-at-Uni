@@ -2,7 +2,7 @@ extends Area2D
 
 var speed: float = 100.0;
 var screenSize: Vector2;
-var initialPosition: Vector2 = Vector2(640, 690);
+var initialPosition: Vector2 = Vector2(640, 690); # posicao padrao para onde a galinha vai spawnar?
 
 func _ready() -> void:
 	screenSize = get_viewport_rect().size;
