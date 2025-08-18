@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xl3qp44s5257" path="res://Material Freeway/galinha/cima/sprite_1.png" id="6_ivps1"]
 [ext_resource type="Texture2D" uid="uid://bli87bpl3kgwb" path="res://Material Freeway/galinha/cima/sprite_2.png" id="7_urp6f"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bwjto"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -40,13 +40,12 @@ animations = [{
 }]
 
 [node name="player" type="Area2D"]
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_1jxqw")
 
 [node name="colisao" type="CollisionShape2D" parent="."]
 
-[node name="audio" type="AudioListener2D" parent="."]
-
 [node name="animacao" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_bwjto")
+sprite_frames = SubResource("SpriteFrames_1jxqw")
 animation = &"baixo"
+
+[node name="audio" type="AudioListener2D" parent="."]
