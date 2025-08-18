@@ -1,0 +1,141 @@
+[gd_scene load_steps=16 format=3 uid="uid://dkk8w67sj2bvv"]
+
+[ext_resource type="Texture2D" uid="uid://cpjwti2j5dh63" path="res://Material Freeway/carros/coches (1).png" id="1_seikp"]
+[ext_resource type="Texture2D" uid="uid://dd7dblff50nhc" path="res://Material Freeway/carros/coches (10).png" id="2_pvg5f"]
+[ext_resource type="Texture2D" uid="uid://kqj7fei54mqe" path="res://Material Freeway/carros/coches (11).png" id="3_qtsem"]
+[ext_resource type="Texture2D" uid="uid://hxe4gajpr84c" path="res://Material Freeway/carros/coches (12).png" id="4_eyynr"]
+[ext_resource type="Texture2D" uid="uid://b5c8sacxu1u1o" path="res://Material Freeway/carros/coches (13).png" id="5_aqtas"]
+[ext_resource type="Texture2D" uid="uid://brgq78l5x5xxn" path="res://Material Freeway/carros/coches (14).png" id="6_dhytv"]
+[ext_resource type="Texture2D" uid="uid://dp5vliaasoe5y" path="res://Material Freeway/carros/coches (2).png" id="7_7g5ho"]
+[ext_resource type="Texture2D" uid="uid://b3tmiffangf4f" path="res://Material Freeway/carros/coches (3).png" id="8_6jem2"]
+[ext_resource type="Texture2D" uid="uid://d2gks0qrbo1rt" path="res://Material Freeway/carros/coches (4).png" id="9_rntr6"]
+[ext_resource type="Texture2D" uid="uid://dx4dsekxboi5b" path="res://Material Freeway/carros/coches (5).png" id="10_a4klt"]
+[ext_resource type="Texture2D" uid="uid://d1hp6v46003e4" path="res://Material Freeway/carros/coches (6).png" id="11_kyb1r"]
+[ext_resource type="Texture2D" uid="uid://dr8rykqcbuane" path="res://Material Freeway/carros/coches (7).png" id="12_xp268"]
+[ext_resource type="Texture2D" uid="uid://c4li53sr401hc" path="res://Material Freeway/carros/coches (8).png" id="13_7jppq"]
+[ext_resource type="Texture2D" uid="uid://d2etiycql5jem" path="res://Material Freeway/carros/coches (9).png" id="14_4rq0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cc6av"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_seikp")
+}],
+"loop": true,
+"name": &"carro1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pvg5f")
+}],
+"loop": true,
+"name": &"carro10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qtsem")
+}],
+"loop": true,
+"name": &"carro11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eyynr")
+}],
+"loop": true,
+"name": &"carro12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_aqtas")
+}],
+"loop": true,
+"name": &"carro13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dhytv")
+}],
+"loop": true,
+"name": &"carro14",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7g5ho")
+}],
+"loop": true,
+"name": &"carro2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6jem2")
+}],
+"loop": true,
+"name": &"carro3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_rntr6")
+}],
+"loop": true,
+"name": &"carro4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_a4klt")
+}],
+"loop": true,
+"name": &"carro5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_kyb1r")
+}],
+"loop": true,
+"name": &"carro6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xp268")
+}],
+"loop": true,
+"name": &"carro7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7jppq")
+}],
+"loop": true,
+"name": &"carro8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_4rq0c")
+}],
+"loop": true,
+"name": &"carro9",
+"speed": 5.0
+}]
+
+[node name="carros" type="RigidBody2D"]
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cc6av")
+animation = &"carro9"
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]

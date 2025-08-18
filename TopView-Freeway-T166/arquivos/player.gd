@@ -1,7 +1,9 @@
 extends Area2D
-var speed: float = 100.0;
+var speed: float = 350.0;
 var screenSize: Vector2;
 var initialPosition: Vector2 = Vector2(640, 690);
+
+signal pontuacao;
 
 # @onready é uma forma fácil de pegar um nó filho.
 @onready var animacao = $animacao # esse é o nó "animacao" que é child do player criado (a galinha);
@@ -31,5 +33,13 @@ func _process(delta: float) -> void:
 		current_velocity = current_velocity.normalized() * speed;
 
 	position += current_velocity * delta;
-	
 	position.y = clamp(position.y, 0.0, screenSize.y);
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "linhaChegada":
+		emit_signal("pontuacao");
+		position = initialPosition;
+	else:
+		position = initialPosition;
+		$audio.play();

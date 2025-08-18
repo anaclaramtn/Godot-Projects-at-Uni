@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0ciwgn6tn48g"]
+[gd_scene load_steps=10 format=3 uid="uid://bh6jbd8mptptw"]
 
 [ext_resource type="Script" uid="uid://bmmj5dwmaqbi3" path="res://player.gd" id="1_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://c6guhkfpdsbjg" path="res://Material Freeway/galinha/baixo/sprite_0.png" id="2_dw050"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bib8w7avoinx1" path="res://Material Freeway/galinha/cima/sprite_0.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://xl3qp44s5257" path="res://Material Freeway/galinha/cima/sprite_1.png" id="6_ivps1"]
 [ext_resource type="Texture2D" uid="uid://bli87bpl3kgwb" path="res://Material Freeway/galinha/cima/sprite_2.png" id="7_urp6f"]
-[ext_resource type="AudioStream" uid="uid://bl35pk8afaiua" path="res://Material Freeway/sons/colide.wav" id="8_dw050"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
@@ -55,7 +54,4 @@ animation = &"baixo"
 position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_1jxqw")
 
-[node name="audio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_dw050")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="audio" type="AudioListener2D" parent="."]
