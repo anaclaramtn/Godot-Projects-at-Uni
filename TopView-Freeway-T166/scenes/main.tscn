@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://gs4r4thal4j0"]
+[gd_scene load_steps=8 format=3 uid="uid://gs4r4thal4j0"]
 
 [ext_resource type="PackedScene" uid="uid://c522uuunlde0k" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://c1ptemao3178t" path="res://material freeway/wallpaperfreeway.png" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dth61joyvxwa4" path="res://scenes/finish_line.tscn" id="2_sugp2"]
+[ext_resource type="AudioStream" uid="uid://bgu8gmtegy7da" path="res://material freeway/sons/tema.wav" id="4_tefeu"]
+[ext_resource type="AudioStream" uid="uid://cod2wfhqxronl" path="res://material freeway/sons/ponto.wav" id="5_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://bkucg0noehkvo" path="res://material freeway/sons/ganhou.wav" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://k0f6ibsjntlj" path="res://scenes/hud.tscn" id="7_o6xl0"]
 
 [node name="main" type="Node"]
 
@@ -15,3 +19,22 @@ position = Vector2(640, 690)
 
 [node name="finish_line" parent="." instance=ExtResource("2_sugp2")]
 position = Vector2(640, 64)
+
+[node name="timerSlowCars" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="timerFastCars" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="audioTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tefeu")
+
+[node name="audioScore" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o6xl0")
+
+[node name="audioWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tipki")
+
+[node name="HUD" parent="." instance=ExtResource("7_o6xl0")]

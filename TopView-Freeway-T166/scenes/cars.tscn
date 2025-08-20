@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwf48y3j7woxv"]
+[gd_scene load_steps=18 format=3 uid="uid://cwf48y3j7woxv"]
 
+[ext_resource type="Script" uid="uid://bi0k7kdwhmbex" path="res://scenes/cars.gd" id="1_3esyg"]
 [ext_resource type="Texture2D" uid="uid://d0lbhm1yuyrdt" path="res://material freeway/carros/coches (1).png" id="1_8k2nh"]
 [ext_resource type="Texture2D" uid="uid://4crtek0eeulr" path="res://material freeway/carros/coches (2).png" id="2_3esyg"]
 [ext_resource type="Texture2D" uid="uid://c55v8v06ulce2" path="res://material freeway/carros/coches (3).png" id="3_drgun"]
@@ -136,6 +137,7 @@ size = Vector2(42.5, 29)
 [node name="cars" type="RigidBody2D"]
 collision_layer = 4
 gravity_scale = 0.0
+script = ExtResource("1_3esyg")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708

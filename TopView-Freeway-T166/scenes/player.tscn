@@ -48,7 +48,7 @@ collision_mask = 6
 script = ExtResource("1_smehm")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_a8ls1")
 animation = &"baixo"
 frame_progress = 0.467981
