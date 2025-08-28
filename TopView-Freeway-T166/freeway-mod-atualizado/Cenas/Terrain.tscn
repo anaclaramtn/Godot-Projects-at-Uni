@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceco7vdmbwd1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okjta"]
+size = Vector2(1152, 27)
+
+[node name="Terrain" type="StaticBody2D"]
+
+[node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.630859)
+centered = false
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(576, 13.5)
+shape = SubResource("RectangleShape2D_okjta")

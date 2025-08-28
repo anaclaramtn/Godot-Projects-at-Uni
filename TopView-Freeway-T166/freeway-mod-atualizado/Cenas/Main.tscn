@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi5bdmg102uj4"]
+
+[ext_resource type="Script" uid="uid://d806o1lghfqv" path="res://Cenas/main.gd" id="1_n6gaj"]
+[ext_resource type="PackedScene" uid="uid://ceco7vdmbwd1a" path="res://Cenas/Terrain.tscn" id="2_gxdmd"]
+[ext_resource type="Texture2D" uid="uid://bj5t1b8lta5im" path="res://my-assets-freeway-mod/terrain.png" id="2_uwx1x"]
+[ext_resource type="PackedScene" uid="uid://di65gpbpx5ovt" path="res://Cenas/Player.tscn" id="3_uwx1x"]
+[ext_resource type="PackedScene" uid="uid://mts7t0iqmckq" path="res://Cenas/hud.tscn" id="5_gxdmd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_n6gaj")
+
+[node name="Pista" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 2)
+scale = Vector2(0.75, 0.630859)
+texture = ExtResource("2_uwx1x")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_uwx1x")]
+position = Vector2(600, 630)
+initial_position = Vector2(600, 630)
+
+[node name="LinhaChegada" parent="." instance=ExtResource("2_gxdmd")]
+
+[node name="timerOrcsLentos" type="Timer" parent="."]
+
+[node name="timerSkelsRapido" type="Timer" parent="."]
+
+[node name="AudioTema" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioPonto" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioVitoria" type="AudioStreamPlayer2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("5_gxdmd")]
