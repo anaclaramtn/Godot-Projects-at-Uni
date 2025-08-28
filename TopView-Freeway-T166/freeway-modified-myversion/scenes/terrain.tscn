@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwh0balk8ewml"]
+[gd_scene load_steps=3 format=3 uid="uid://dwh0balk8ewml"]
 
 [ext_resource type="Texture2D" uid="uid://bj5t1b8lta5im" path="res://my-assets-freeway-mod/terrain.png" id="1_b0j75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0j75"]
+size = Vector2(1280, 38)
 
 [node name="terrain" type="Node2D"]
 
@@ -9,3 +12,9 @@ offset_right = 1536.0
 offset_bottom = 1024.0
 scale = Vector2(0.833295, 0.705091)
 texture = ExtResource("1_b0j75")
+
+[node name="finish-line" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish-line"]
+position = Vector2(640, 19)
+shape = SubResource("RectangleShape2D_b0j75")

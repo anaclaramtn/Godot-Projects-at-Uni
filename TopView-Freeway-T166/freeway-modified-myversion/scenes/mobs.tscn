@@ -394,7 +394,10 @@ motion_mode = 1
 script = ExtResource("1_634vd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-103, 2)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mfqhh")
-animation = &"orc-mage-run"
+animation = &"ske-warrior-run"
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
