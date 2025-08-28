@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwh0balk8ewml"]
+
+[ext_resource type="Texture2D" uid="uid://bj5t1b8lta5im" path="res://my-assets-freeway-mod/terrain.png" id="1_b0j75"]
+
+[node name="terrain" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1536.0
+offset_bottom = 1024.0
+scale = Vector2(0.833295, 0.705091)
+texture = ExtResource("1_b0j75")
