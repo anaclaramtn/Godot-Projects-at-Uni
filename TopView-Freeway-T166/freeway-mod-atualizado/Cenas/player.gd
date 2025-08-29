@@ -3,6 +3,7 @@ extends Area2D
 @export var speed: float = 150.0;
 var screen_size: Vector2;
 @export var initial_position: Vector2 = Vector2(600, 640);
+signal pontua
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size;
@@ -34,11 +35,10 @@ func _process(delta):
 		$animation.stop();
 
 
-
-
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body):
 	if body.name == "Terrain":
 		emit_signal("pontua")
 		position = initial_position
 	else:
+		$audio.play()
 		position = initial_position

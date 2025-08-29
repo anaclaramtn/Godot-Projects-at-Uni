@@ -158,5 +158,3 @@ shape = SubResource("RectangleShape2D_vwqu2")
 
 [node name="audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_tkb1f")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

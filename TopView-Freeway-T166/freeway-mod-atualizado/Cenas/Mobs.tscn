@@ -14,8 +14,8 @@ script/source = "extends RigidBody2D
 
 func _ready():
 	var tipos_mobs = $animation.sprite_frames.get_animation_names()
-	var mob = tipos_mobs[randi_range(0, tipos_mobs - 1)]
-	$animation.animation(mob)
+	var mob = tipos_mobs[randi_range(0, tipos_mobs.size() - 1)]
+	$animation.play(mob)
 
 func _on_notifier_screen_exited() -> void:
 	queue_free()
