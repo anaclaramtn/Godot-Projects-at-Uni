@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dth61joyvxwa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05ejo"]
+size = Vector2(1282, 20)
+
+[node name="finish_line" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="sprite" type="Sprite2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05ejo")

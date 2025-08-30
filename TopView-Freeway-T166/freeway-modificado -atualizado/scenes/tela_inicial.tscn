@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct7pi6qfsj80"]
+
+[ext_resource type="Script" uid="uid://bcvfb1kf5h5ul" path="res://tela_inicial.gd" id="1_2o6u0"]
+[ext_resource type="Texture2D" uid="uid://bj5t1b8lta5im" path="res://my-assets-freeway-mod/terrain.png" id="2_2o6u0"]
+[ext_resource type="FontFile" uid="uid://djwj4jgx3bn2r" path="res://my-assets-freeway-mod/antiquity-print.ttf" id="3_mxryr"]
+
+[node name="telaInicial" type="Node"]
+script = ExtResource("1_2o6u0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_2o6u0")
+expand_mode = 3
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 508.0
+offset_right = 632.0
+offset_bottom = 597.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_mxryr")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 639.0
+offset_top = 508.0
+offset_right = 803.0
+offset_bottom = 597.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_mxryr")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -486.0
+offset_top = 65.0
+offset_right = 504.0
+offset_bottom = 222.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_mxryr")
+theme_override_font_sizes/font_size = 90
+text = "Knight's Crossing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
