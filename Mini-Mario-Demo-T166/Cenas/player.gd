@@ -4,7 +4,7 @@ class_name Player
 
 @export_group("Locomotion")
 @export var speed = 200.0
-@export var jump_velocity = - 350.0
+@export var jump_velocity = - 550.0
 @export var run_speed_damping = 0.5
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -29,3 +29,8 @@ func _physics_process(delta):
 	$Animacao.trigger_animation(velocity, direction)
 	
 	move_and_slide()
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	(area as Enemy)._die_from_hit()
