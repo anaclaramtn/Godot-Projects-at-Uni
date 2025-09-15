@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm00too5xnrrq"]
+
+[ext_resource type="Texture2D" uid="uid://dhmodocnsu7ds" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk1.png" id="1_kbfrd"]
+[ext_resource type="Texture2D" uid="uid://cxtty1fuwy5ab" path="res://Assets Super Mario Bros/Sprites/Goomba_Walk2.png" id="2_11lup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dbh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kbfrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_11lup")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg8wq"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="Goomba" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8dbh6")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jg8wq")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8)
+collision_mask = 2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.8, 0.8)
