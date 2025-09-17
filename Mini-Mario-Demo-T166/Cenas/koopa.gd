@@ -30,3 +30,11 @@ func _on_stomp(player_position: Vector2):
 	
 	var movement_direction = 1 if player_position.x <= global_position.x else -1
 	h_speed = -movement_direction * slide_speed
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Koopa and (area as Koopa).in_a_shell and (area as Koopa).h_speed != 0:
+		_die_from_hit()
+		
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
