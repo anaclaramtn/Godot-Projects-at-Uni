@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bp4nb8lfq2x2u"
+path="res://.godot/imported/thorn.wav-3fea29fe0958362cd671147e4c8eec8b.sample"
+
+[deps]
+
+source_file="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/Meta data assets files/sounds/fx/thorn.wav"
+dest_files=["res://.godot/imported/thorn.wav-3fea29fe0958362cd671147e4c8eec8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
