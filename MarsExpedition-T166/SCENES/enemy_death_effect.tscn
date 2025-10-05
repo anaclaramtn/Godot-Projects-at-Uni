@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1c61gpu8ymqq"]
+
+[ext_resource type="Texture2D" uid="uid://cmktcjfb4pb85" path="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/warped-Caves/PNG/sprites/Fx/enemy-death/enemy-death-1.png" id="1_jt3db"]
+[ext_resource type="Texture2D" uid="uid://coruv33aldyuf" path="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/warped-Caves/PNG/sprites/Fx/enemy-death/enemy-death-2.png" id="2_rrbjv"]
+[ext_resource type="Texture2D" uid="uid://byhyokkuiv7tf" path="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/warped-Caves/PNG/sprites/Fx/enemy-death/enemy-death-3.png" id="3_viej1"]
+[ext_resource type="Texture2D" uid="uid://mjgjsy0u66y5" path="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/warped-Caves/PNG/sprites/Fx/enemy-death/enemy-death-4.png" id="4_agmcr"]
+[ext_resource type="Texture2D" uid="uid://d2abg0xskfx4m" path="res://ASSETS METROID/ASSETS-EXTRA/Assets/Packs/warped-Caves/PNG/sprites/Fx/enemy-death/enemy-death-5.png" id="5_pmc7u"]
+[ext_resource type="Script" uid="uid://ibs2pbyunvc6" path="res://SCENES/enemy_death_effect.gd" id="6_rrbjv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xl2a4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jt3db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rrbjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_viej1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_agmcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pmc7u")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"enemy_death",
+"speed": 12.0
+}]
+
+[node name="EnemyDeathEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xl2a4")
+animation = &"enemy_death"
+autoplay = "enemy_death"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("6_rrbjv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

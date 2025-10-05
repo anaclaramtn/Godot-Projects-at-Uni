@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-var enemy_death_effect = preload("res://SCENES/enemy_death_effect.tscn")
-
 @export var patrol_points : Node
-@export var speed : int = 2000
-@export var wait_time : int = 2
+@export var speed : int = 5000
+@export var wait_time : int = 1
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
@@ -19,8 +17,6 @@ var point_positions : Array [Vector2]
 var current_point : Vector2
 var current_point_position : int
 var can_walk : bool
-
-@export var health_amount : int = 3
 
 func _ready() -> void:
 	if patrol_points != null:
@@ -73,25 +69,9 @@ func enemy_walk(delta : float):
 	animated_sprite_2d.flip_h = direction.x > 0
 
 
-func _on_timer_timeout() -> void:
-	can_walk = true
 
 func enemy_animation():
 	if current_state == State.Idle && !can_walk:
 		animated_sprite_2d.play("idle")
 	elif current_state == State.Walk && can_walk:
 		animated_sprite_2d.play("walk")
-
-
-func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.get_parent().has_method("get_damage_amount"):
-		var node = area.get_parent() as Node
-		health_amount -= node.damage_amount
-		
-		print("health amount: ", health_amount)
-		
-		if health_amount <= 0:
-			var enemy_death_effect_instance = enemy_death_effect.instantiate() as Node2D
-			enemy_death_effect_instance.global_position = global_position
-			get_parent().add_child(enemy_death_effect_instance)
-			queue_free() 
