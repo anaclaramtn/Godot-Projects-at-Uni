@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://nxa0noijxe72"]
+
+[ext_resource type="Texture2D" uid="uid://bga32wopw8ddb" path="res://ASSETS METROID/Projectiles/Common_Projectile-Sheet.png" id="1_ss01b"]
+[ext_resource type="Script" uid="uid://dc4c4t0pmk2am" path="res://SCRIPTYS/bullet.gd" id="2_oqteu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqteu"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt4ua"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_palud"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjba8"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_650jr"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd4sm"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8wgm"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrew0"]
+atlas = ExtResource("1_ss01b")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vimf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqteu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt4ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_palud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjba8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_650jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd4sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8wgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrew0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqteu"]
+radius = 6.666667
+
+[node name="bullet" type="AnimatedSprite2D"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_vimf0")
+frame_progress = 0.008339459
+script = ExtResource("2_oqteu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3.3333333, 0)
+shape = SubResource("CircleShape2D_oqteu")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

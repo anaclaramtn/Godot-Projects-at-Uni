@@ -1,7 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://dvnhsvketby2b"]
+[gd_scene load_steps=39 format=3 uid="uid://dvnhsvketby2b"]
 
 [ext_resource type="Texture2D" uid="uid://dg8eifa18ojo3" path="res://ASSETS METROID/Heroes/H1/h1_complete_sheet.png" id="1_85nbx"]
-[ext_resource type="Script" uid="uid://bphsikbruph88" path="res://SCENES/player.gd" id="1_ai16o"]
+[ext_resource type="Script" uid="uid://bphsikbruph88" path="res://SCRIPTYS/player.gd" id="1_ai16o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ai16o"]
 atlas = ExtResource("1_85nbx")
@@ -127,6 +127,18 @@ region = Rect2(234, 352, 39, 32)
 atlas = ExtResource("1_85nbx")
 region = Rect2(273, 352, 39, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdx3t"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(0, 384, 39, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrfhc"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(39, 384, 39, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdp40"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(78, 384, 39, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fko8"]
 animations = [{
 "frames": [{
@@ -235,7 +247,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdx3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrfhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdp40")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dxh7"]
@@ -248,10 +274,12 @@ script = ExtResource("1_ai16o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2fko8")
-animation = &"jump"
+animation = &"shoot"
 autoplay = "idle"
-frame_progress = 0.64152205
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 6)
 shape = SubResource("CapsuleShape2D_6dxh7")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(13, 8)
