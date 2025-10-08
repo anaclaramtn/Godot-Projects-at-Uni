@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://blid4l2khllfa"]
+
+[ext_resource type="Script" uid="uid://c66wmltspj2ht" path="res://game_over.gd" id="1_svlec"]
+[ext_resource type="Texture2D" uid="uid://hum1stdfxl1f" path="res://GUI/HUD.png" id="2_es73e"]
+[ext_resource type="FontFile" uid="uid://brahgl80r1qem" path="res://ASSETS METROID/HAKSEN.ttf" id="3_3uqcp"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -100.0
+offset_right = 47.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_svlec")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -143.0
+offset_right = 244.3158
+offset_bottom = 103.0
+texture = ExtResource("2_es73e")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.395
+anchor_top = -0.119
+anchor_right = 1.36
+anchor_bottom = 0.40300003
+offset_left = 0.9700012
+offset_top = 0.97300005
+offset_right = 1.0400009
+offset_bottom = 0.99899864
+theme_override_fonts/font = ExtResource("3_3uqcp")
+theme_override_font_sizes/font_size = 27
+text = "GAME OVER!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -28.0
+offset_right = 77.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3uqcp")
+theme_override_font_sizes/font_size = 20
+text = "RETRY"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3uqcp")
+theme_override_font_sizes/font_size = 20
+text = "MENU"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3uqcp")
+theme_override_font_sizes/font_size = 20
+text = "QUIT"

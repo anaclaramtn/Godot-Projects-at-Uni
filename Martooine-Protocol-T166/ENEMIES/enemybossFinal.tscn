@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://qt3bo6qrwpmn"]
+
+[ext_resource type="Script" uid="uid://dl8ankmrag0i" path="res://ENEMIES/enemyboss_final.gd" id="1_sc2c5"]
+[ext_resource type="Texture2D" uid="uid://dxeir5igicnt8" path="res://ASSETS METROID/Boss/boss_full_sheet.png" id="2_p5hmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc2c5"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5hmn"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycib"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ad7"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(384, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5kcs"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(480, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we2fa"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(576, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dufh2"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(672, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jt8b"]
+atlas = ExtResource("2_p5hmn")
+region = Rect2(768, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opyc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc2c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5hmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hycib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ad7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5kcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we2fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dufh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jt8b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ct5n"]
+size = Vector2(20, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koxl1"]
+size = Vector2(22, 12.5)
+
+[node name="EnemyBoss" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_sc2c5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_opyc3")
+frame_progress = 0.79523724
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 17.5)
+shape = SubResource("RectangleShape2D_3ct5n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(2, 17.25)
+shape = SubResource("RectangleShape2D_koxl1")
+debug_color = Color(0.9537408, 0, 0.5545141, 0.41960785)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cecbrgukpd6s0"]
+
+[ext_resource type="PackedScene" uid="uid://p3h4tqsp6n5f" path="res://GUI/HEALTH_BAR/health_bar.tscn" id="1_opxj0"]
+[ext_resource type="Texture2D" uid="uid://6nerclytm7ty" path="res://GUI/HEALTH_BAR/heart1.png" id="2_536of"]
+[ext_resource type="Texture2D" uid="uid://wf48bwqsv7iu" path="res://GUI/HEALTH_BAR/heart0.png" id="3_j0bil"]
+
+[node name="gameScreen" type="CanvasLayer"]
+
+[node name="health_bar" parent="." instance=ExtResource("1_opxj0")]
+position = Vector2(10, 10)
+heartFULL = ExtResource("2_536of")
+heartEMPTY = ExtResource("3_j0bil")

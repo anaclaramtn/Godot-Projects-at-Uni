@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://csqwbxj2la86f"]
+
+[ext_resource type="Texture2D" uid="uid://hum1stdfxl1f" path="res://GUI/HUD.png" id="1_4qg4k"]
+[ext_resource type="Script" uid="uid://bsaugc2cf3gu7" path="res://GUI/menu_inicial.gd" id="1_ep0o8"]
+[ext_resource type="FontFile" uid="uid://brahgl80r1qem" path="res://ASSETS METROID/HAKSEN.ttf" id="2_qxe5m"]
+
+[node name="menu_inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ep0o8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.025
+anchor_right = 8.05
+anchor_bottom = 6.019
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = -1.7600098
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4qg4k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.6749998
+anchor_top = 4.075
+anchor_right = 6.5250006
+anchor_bottom = 5.6250005
+offset_right = -3.0517578e-05
+offset_bottom = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Separator" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="startButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qxe5m")
+theme_override_font_sizes/font_size = 26
+text = "START"
+
+[node name="Separator2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="quitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qxe5m")
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = 2.7500005
+anchor_right = 8.27
+anchor_bottom = 4.12
+offset_right = 183.19998
+offset_bottom = 31.199997
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qxe5m")
+theme_override_font_sizes/font_size = 47
+text = "Martooine Protocol 3A-17"
+uppercase = true
+
+[connection signal="pressed" from="HBoxContainer/startButton" to="." method="_on_button_1_pressed"]
