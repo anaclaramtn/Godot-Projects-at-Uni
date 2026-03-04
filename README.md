@@ -22,8 +22,6 @@ In addition, as a challenge proposed in a university course, I implemented extra
 
 These changes were intentionally made to deepen my understanding of movement logic and sprite handling.
 
-## 🎥 Gameplay
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2b24811a-fe2f-44ca-965c-1b0b467a17af" width="700"/>
 </p>
@@ -46,7 +44,6 @@ The focus of this project was:
 
 ##  Matooine Protocol
 Matooine Protocol is a 2D platformer strongly inspired by classic Mario-style games. Although it is more complex than the previous projects, it was fully developed within the scope and technical requirements of the university course. The main goal was to design a complete and fully playable experience while respecting the constraints defined by the discipline.
-
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e47dc3cf-e57a-4eb8-999d-840ef8c69a02" width="700"/>
