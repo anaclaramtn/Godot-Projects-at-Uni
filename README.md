@@ -1,5 +1,8 @@
 # Godot Development Projects
 
+![Godot Engine](https://img.shields.io/badge/Godot_Engine-478CBF?style=flat&logo=godot-engine&logoColor=white)
+![GDScript](https://img.shields.io/badge/GDScript-478CBF?style=flat&logo=godot-engine&logoColor=white)
+
 This repository contains three game development projects built with the Godot Engine.  
 Each project was developed to focus on learning and mastering specific game dev and OOP concepts, progressively increasing in complexity and architectural organization.
 All projects were built using the Godot Engine and GDScript.
